@@ -104,7 +104,7 @@ class WnCall extends React.Component {
             if(this.call_id != data.call_id) return;
 
             this.leaveCall();
-            this.setState({ call_status: 'no_answer' });
+            this.setState({ call_status: 'no_answer', show_closing_screen: true });
         });
 
         socket.on('call:ringing', (data) => {
@@ -272,6 +272,8 @@ class WnCall extends React.Component {
     }
 
     reject() {
+        $('.incoming-call-modal').modal('hide');
+
         this.notifyReject();
         this.showClosingScreen();
     }
@@ -372,7 +374,7 @@ class WnCall extends React.Component {
                                     <span>Redial</span>
                                 </span>
                                 
-                                <span className="cancel control" onClick={() => this.closeWindow()}>
+                                <span className="cancel control" onClick={() => this.resetThings()}>
                                     <i class="fas fa-times icon"></i>
                                     <span>Cancel</span>
                                 </span>
