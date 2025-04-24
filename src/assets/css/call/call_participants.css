@@ -1,0 +1,57 @@
+.participants-container {
+    padding: 0 15px;
+    margin-top: 10px;
+}
+.participants-section {
+    margin-top: 20px;
+}
+.participants-section .nav-pills {
+    margin-bottom: 0 !important;
+}
+.participants-section .bulk-actions {
+    display: inline-block !important;
+    float: right;
+    margin: 0;
+    padding: 0 !important;
+}
+.participants-container .bulk-actions > button {
+    background: white;
+    color: #4E78B8;
+    border: none;
+    font-size: 13px;
+}
+.participants-container .section-title span{
+    background: rgba(173, 174, 175, 0.25);
+    border-radius: 50px;
+    padding: 0px 8px;
+    margin-left: 10px;
+}
+.participants-container .section-title {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 24px;
+    color: #ADAEAF;
+}
+.participants-container .bulk-actions .dropdown{
+    display: inline-block;
+}
+.participants-container .bulk-actions .dropdown-menu {
+    left: -10px !important;
+}
+.participants-container .bulk-actions .dropdown-toggle{
+    padding-left: 15px;
+    padding-right: 0;
+    background: none;
+    color: #4E78B8;
+    font-size: 17px;
+    border: none;
+}
+.participants-container .bulk-actions .dropdown-toggle::after {
+    display: none;
+}
+.participants-container .bulk-actions .dropdown-toggle:focus{
+    box-shadow: none;
+}
+.participants-container .bulk-actions .dropdown-item {
+    font-size: 13px;
+}

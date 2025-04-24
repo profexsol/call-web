@@ -1,0 +1,219 @@
+.video-effects-modal {
+  z-index: 9999999;
+  display: block !important;
+}
+.video-effects-modal.hidden {
+  visibility: hidden;
+}
+.video-effects-modal .modal-dialog {
+  max-width: 1000px;
+}
+.video-effects-modal .modal-content {
+  border-radius: 0;
+}
+.video-effects-modal .modal-content.loading .modal-body,
+.video-effects-modal .modal-content.loading .modal-footer {
+  display: none;
+}
+.video-effects-modal .modal-content.error .modal-body,
+.video-effects-modal .modal-content.error .modal-footer {
+  display: none;
+}
+.video-effects-modal .modal-body {
+  display: flex;
+  column-gap: 10px;
+  max-height: 400px;
+  padding: 10px !important;
+  border: 0;
+}
+.video-effects-modal .popup-close {
+  color: black;
+  background: white;
+}
+.video-effects-modal .modal-footer {
+  padding: 5px 10px !important;
+  text-align: right;
+}
+.video-effects-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.video-effects-modal .preview {
+  width: 50%;
+  position: relative;
+}
+.video-effects-modal .preview video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.video-effects-modal .modal-content .effected-canvas {
+  position: absolute;
+  left: -100000px;
+}
+.video-effects-modal .modal-content .effected-stream {
+  display: none;
+}
+.video-effects-modal .modal-content.effected .original-stream {
+  opacity: 0;
+}
+.video-effects-modal .modal-content.effected .effected-stream {
+  display: block;
+}
+.video-effects-modal button {
+  font-size: 13px;
+  margin-right: 5px;
+  border-radius: 0;
+}
+.video-effects-modal .button:focus {
+  box-shadow: none;
+}
+.video-effects-modal .loader {
+  position: relative;
+  left: 0;
+  height: 70px;
+  font-size: 17px;
+  transform: none;
+  margin-top: 0;
+}
+.video-effects-modal .loader .icon {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  color: black !important;
+}
+.video-effects-modal .applying-effect {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  font-size: 18px;
+}
+.video-effects-modal .modal-content.error .error {
+  padding: 20px;
+  color: red;
+}
+.video-effects-modal .choose-background {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+.video-effects-modal .background-blur .text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: none !important;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.video-effects-modal .backgrounds-section {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  height: calc(100% - 25px);
+  overflow-y: auto;
+}
+.video-effects-modal .option {
+  width: 25%;
+  height: 100px;
+  position: relative;
+  padding: 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  object-fit: cover;
+}
+.video-effects-modal .option > * {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  border-radius: inherit;
+}
+.video-effects-modal .option.selected > * {
+  border: 3px solid #7493ff;
+}
+.video-effects-modal .option .text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+.video-effects-modal .option.no-background {
+  color: white;
+  font-size: 13px;
+  text-align: center;
+  line-height: 100px;
+}
+.video-effects-modal .option.no-background div {
+  background-color: black;
+}
+.video-effects-modal .option:last-child {
+  margin-right: 0;
+}
+.video-effects-modal .backgrounds-section::-webkit-scrollbar {
+  width: 7px;
+}
+.video-effects-modal .backgrounds-section::-webkit-scrollbar-track {
+  background: #fff;
+  border-radius: 10px;
+}
+.video-effects-modal .backgrounds-section::-webkit-scrollbar-thumb {
+  background: #b3b3b3;
+  border-radius: 10px;
+}
+.video-effects-modal .backgrounds-section::-webkit-scrollbar-thumb:hover {
+  background: #b3b3b3;
+}
+
+@media screen and (max-width: 991px) {
+  .video-effects-modal .popup-container {
+    max-width: 90% !important;
+  }
+  .video-effects-modal .option {
+    height: 70px;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .video-effects-modal .option {
+    height: 60px;
+    font-size: 12px !important;
+  }
+  .video-effects-modal .option.no-background {
+    line-height: 60px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .video-effects-modal .option {
+    height: 50px;
+    font-size: 10px !important;
+  }
+  .video-effects-modal .option.no-background {
+    line-height: 50px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .video-effects-modal .option {
+    height: 40px;
+  }
+  .video-effects-modal .preview {
+    width: 40%;
+  }
+  .video-effects-modal .backgrounds-section {
+    width: 60%;
+  }
+  .video-effects-modal .option.no-background {
+    line-height: 40px;
+  }
+}
+
+.video-effects-container {
+  position: relative;
+}
+
+.canvas-overlay-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}

@@ -1,0 +1,57 @@
+.whiteboard-modal{
+	z-index: 99999999999;
+}
+.whiteboard-modal .modal-dialog{
+	max-width: 100%;
+	margin: 0;
+	height: 100%;
+}
+.whiteboard-modal .popup-close {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    line-height: 26px;
+    font-weight: bold;
+    border-radius: 25px;
+    background-color: #2d74da;
+    color: #fff;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 15px;
+    text-align: center;
+    z-index: 999;
+}
+.whiteboard-parent a:link {
+	color: #999;
+	text-decoration: none;
+	cursor:pointer;
+}
+.whiteboard-parent a:visited {
+	text-decoration: none;
+	color: #999;
+}
+.whiteboard-parent a:hover {
+	text-decoration: underline;
+	color: #CCC;
+}
+.whiteboard-parent a:active {
+	text-decoration: none;
+	color: #999;
+}
+#wrapper {
+	position:relative;
+	height: 100%;
+}
+.whiteboard-parent h1 {
+	font-family:"Belle","Comic Sans MS", cursive;
+	font-size:28px;
+	text-transform:uppercase;
+	font-weight:normal;
+}
+.whiteboard-parent h2 { 
+	font-size:30px; 
+}
+#whiteboard{
+	height: 100%;
+}

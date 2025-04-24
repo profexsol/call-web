@@ -1,0 +1,32 @@
+.incoming-call-modal .popup-inner {
+    padding: 20px !important;
+}
+.incoming-call-modal .top-part {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+}
+.incoming-call-modal .top-part img {
+    width: 90px;
+    border-radius: 10px;
+    border: 1px solid #f1f1f1;
+}
+.incoming-call-modal .name {
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+.incoming-call-modal .top-part p:last-child {
+    margin-bottom: 0;
+}
+.incoming-call-modal .right-side {
+    margin-left: 15px;
+}
+.incoming-call-modal .bottom-part {
+    display: flex;
+    gap: 10px;
+    justify-content: end;
+    margin-top: 30px;
+}
+.incoming-call-modal button {
+    font-size: 14px;
+}

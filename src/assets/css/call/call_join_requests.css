@@ -1,0 +1,38 @@
+.join-requests-container {
+    padding: 10px;
+}
+.join-requests-container .left-side {
+    width: 80%;
+}
+.join-requests-container .loader{
+    text-align: center;
+}
+.join-requests-container .no_data{
+    color: #b3b3b3;
+    font-style: italic;
+}
+.join-requests-container .loader {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #2d74da !important;
+}
+.join-requests-container .actions {
+    padding: 0 !important;
+    color: #3B414E;
+    font-size: 13px;
+}
+.join-requests-container button {
+    font-size: 14px;
+    border: none;
+    background: none;
+    color: #20834e;
+    margin-left: 10px;
+}
+.join-requests-container button.reject-btn{
+    color: #ADAEAF;
+}
+.join-requests-container .bulk-actions button {
+    color: #4E78B8;
+}

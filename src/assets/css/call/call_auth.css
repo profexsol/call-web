@@ -1,0 +1,24 @@
+.call-auth button{
+    width: 100% !important;
+}
+.call-auth label{
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.call-auth .basic-error{
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+.call-auth .modal{
+    z-index: 99999;
+}
+.call-auth .modal-dialog{
+    max-width: 600px;
+}
+.call-auth .modal-content{
+    border: none;
+    padding: 20px;
+    box-shadow: 0px 0px 5px 0px #2d2d2d;
+    -webkit-box-shadow: 0px 0px 5px 0px #2d2d2d;
+}

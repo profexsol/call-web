@@ -1,0 +1,70 @@
+.call-header .left {
+    visibility: hidden;
+}
+.precall-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999999999999;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #2b2c30;
+    color: white;
+}
+.precall-screen img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 100px;
+}
+.precall-screen span {
+    margin-top: 10px;
+}
+.precall-screen .name {
+    margin-top: 30px;
+    font-size: 20px;
+}
+.precall-screen .bottom_controls {
+    position: fixed;
+    bottom: 30px;
+    display: flex;
+    gap: 40px;
+}
+.precall-screen .control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.precall-screen .control .icon {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    font-size: 30px;
+    background: white;
+    border-radius: 100px;
+    color: black;
+    line-height: 60px;
+}
+.precall-screen .redial .icon {
+    background: #17ac17;
+    color: white;
+    transform: rotate(86deg);
+}
+.precall-screen .leave .icon {
+    background: red;
+    color: white;
+    transform: rotate(224deg);
+}
+.precall-screen .images img:first-child {
+    position: relative;
+    right: -20px;
+}
+.precall-screen .images img:last-child {
+    position: relative;
+    left: -20px;
+}

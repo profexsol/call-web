@@ -1,0 +1,181 @@
+#videos-container{
+    width: 100%;
+    height: 100%;
+}
+.user-stream-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background: rgb(47, 49, 54);
+    border: 1px solid #393838;
+    border-radius: 7px;
+}
+.user-stream-item .stream-item {
+    border-radius: inherit;
+}
+.user-stream-item video {
+    display: inline-block !important;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px
+}
+.user-stream-item .overlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+    background: rgb(47, 49, 54);
+    z-index: 999;
+    border-radius: inherit;
+}
+.user-stream-item .overlay-item{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    margin: 0;
+}
+.user-stream-item .overlay .name {
+    position: relative;
+    bottom: -10px;
+}
+.user-stream-item .overlay .waiting {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.user-stream-item .controls{
+    width: auto;
+    position: absolute;
+    top: 5px;
+    right: 3px;
+    padding: 5px 7px;
+    text-align: center;
+    display: inline-flex;
+    align-items: baseline;
+    border-radius: 50px;
+    z-index: 9999;
+    column-gap: 7px;
+}
+.user-stream-item .controls-right {
+    right: initial !important;
+    left: 3px;
+}
+.user-stream-item .control{
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+    padding: 0 1px;
+    text-align: right;
+}
+.user-stream-item .control.reaction {
+    font-size: 36px;
+}
+.user-stream-item .hand-raised i{
+    color: #EDAB30;
+}
+.user-stream-item .controls .audio-on {
+    color: #31D27C;
+}
+.user-stream-item .controls .is-disconnected {
+    position: relative;
+}
+.user-stream-item .controls .is-disconnected .fa-slash {
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+.user-stream-item .video-off{
+    display: block;
+    width: 160px;
+    height: 160px;
+    border-radius: 500px;
+    object-fit: cover;
+}
+.user-stream-item .name {
+    width: 100% !important;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    z-index: 99;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.user-stream-item.speaking {
+    border: 1px solid #31D27C;
+}
+.user-stream-item.medium-design .video-off{
+    width: 120px !important;
+    height: 120px !important;
+}
+.user-stream-item.medium-design .controls {
+    top: 10px;
+    right: 10px;
+}
+.user-stream-item.medium-design .control {
+    font-size: 20px;
+}
+.user-stream-item.small-design .video-off, .user-stream-item.small-design .profile-picture {
+    width: 60px;
+    height: 60px;
+}
+.user-stream-item.small-design .overlay-item .name, .user-stream-item.extra-small-design .overlay-item .name {
+    bottom: -5px
+}
+.small-design .name, .small-design .overlay{
+    font-size: 13px !important;
+}
+.user-stream-item.small-design .controls {
+    top: 3px;
+    right: 4px;
+    padding-left: 0;
+    padding-right: 0;
+    column-gap: 3px;
+}
+.user-stream-item.small-design .controls-right {
+    left: 4px;
+}
+.user-stream-item.extra-small-design .controls {
+    top: 1px;
+    right: 1px;
+    padding-left: 0;
+    padding-right: 0;
+    column-gap: 2px;
+}
+.small-design .control {
+    font-size: 15px !important;
+}
+.extra-small-design .control {
+    font-size: 13px !important;
+}
+.small-design .control.reaction {
+    font-size: 20px !important;
+}
+.extra-small-design .control.reaction {
+    font-size: 17px !important;
+}
+.extra-small-design .video-off{
+    width: 30px !important;
+    height: 30px !important;
+}
+.extra-small-design .name, .extra-small-design .overlay{
+    font-size: 10px !important;
+}

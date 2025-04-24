@@ -1,0 +1,78 @@
+.add-message {
+    background: #f3f3f3;
+    padding: 10px;
+}
+.add-message .options {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+.add-message .options label {
+    margin-top: 9px;
+    font-size: 15px;
+    padding: 0;
+}
+.add-message .input-field-container {
+    width: calc(100% - 40px);
+    padding: 0px 5px;
+}
+.add-message #input-field {
+    width: 100%;
+    background: rgb(255, 255, 255);
+    border: 1px solid #ECECEC;
+    border-radius: 30px;
+    padding-right: 26px;
+    padding-left: 10px;
+    margin-right: 10px;
+    padding-top: 8px;
+    font-size: 14px;
+    color: #373737;
+    resize: none;
+}
+.add-message fieldset {
+    display: none;
+}
+.add-message .send-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    background: #4E78B8;
+    border: none;
+    color: white;
+    padding: 0;
+}
+.add-message .attachment-container {
+    position: absolute;
+    right: -5px;
+    top: 20px;
+}
+.add-message .options-container {
+    position: relative;
+}
+.add-message.disabled {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.add-message-image-preview{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+}
+.progress-counter{
+    position: relative;
+    top: -16px;
+    left: -42px;
+}
+.add-message .fa,
+.add-message .fas {
+	font-family: "Font Awesome 5 Free" !important;
+	font-weight: 900;
+}

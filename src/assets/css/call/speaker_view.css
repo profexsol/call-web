@@ -1,0 +1,43 @@
+.speaker-view .other-streams {
+    width: 80%;
+    height: 15%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+.speaker-view .streams-container {
+    display: flex;
+    justify-content: center;
+}
+.speaker-view .speaker-stream {
+    height: 83%;
+    padding: 0 40px;
+}
+.showing-ad .speaker-view .speaker-stream {
+    padding: 0;
+}
+.speaker-view .other-streams .user-stream-item {
+    width: 20%;
+    height: 100% !important;
+    margin: 0 5px;
+}
+.speaker-view.only-me .other-streams {
+    display: none;
+}
+.speaker-view.only-me .speaker-stream {
+    height: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+	.speaker-view .other-streams {
+        width: 100%;
+    }
+    .speaker-view .speaker-stream {
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .speaker-view .other-streams .user-stream-item {
+        width: 30%;
+    }
+}

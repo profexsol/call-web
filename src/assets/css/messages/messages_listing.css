@@ -1,0 +1,215 @@
+.messages-list {
+    padding: 20px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+.message {
+    font-weight: 400;
+    font-size: 13px;
+    margin-bottom: 40px;
+    width: 300px;
+    clear: both;
+}
+.message:last-of-type {
+    margin-bottom: 0;
+}
+.message:hover {
+    transform: none;
+}
+.message-body {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    border-radius: 12px;
+    line-height: 20px;
+    padding: 14px;
+    background: #F1F1F1;
+    color: #3B414E;
+    /* Yoonus Adding css for chat body */
+    padding: 10px 15px 10px 15px;
+    text-align: left;
+    margin-right: 44px;   
+}
+/* Yoonus Adding css for chat body start */
+.message.left .message-body ::before{
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 10px solid #E3EDFC;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #E3EDFC;
+    border-bottom: 10px solid transparent;
+    left: -16px;
+    top: 0px;
+    transform: rotate(-251deg);
+}
+.message.right {
+    float: right;
+}
+.message.left {
+    float: left;
+}
+.message.right .message-body ::after {
+    content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid #F1F1F1;
+  border-right: 10px solid transparent;
+  /* border-top: 10px solid #F1F1F1;
+  border-bottom: 10px solid transparent;
+  right: -12px;
+  top: -4px; */
+  transform: rotate(-33deg);
+  
+}
+/* Yoonus Adding css for chat body end */
+.message img {
+    width: 100%;
+    height: 100%;
+}
+.message.right {
+    text-align: right;
+}
+.message.left {
+    text-align: left;
+}
+.message.left .message-body {
+    margin-right: -35px !important;
+    position: relative;
+    background: #E3EDFC;
+}
+.message.right .message-body {
+    margin-left: -35px !important;
+}
+.message .author-name {
+    color: #4E78B8;
+    font-size: 12px;
+    font-weight: bold;
+}
+.message .time {
+    font-size: 10px;
+    color: #6B6B6B;
+}
+.message .private-info {
+    font-size: 10px;
+    color: #6c6c6c;
+    text-decoration: underline;
+    margin-bottom: 5px;
+}
+.message .profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+}
+.message .message-header .right-side, .message .message-header .left-side {
+    display: inline-block;
+}
+.message .message-header .left-side {
+    float: left;
+}
+.message .message-header .right-side {
+    float: right;
+}
+.message.right .message-header .left-side {
+    float: right;
+    margin-right: 0;
+}
+.message.right .message-header .right-side {
+    float: left;
+    margin-left: 30px;
+}
+.no-messages{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    color: #b3b3b3;
+    font-style: italic;
+}
+/* Yoonus CSS start  */
+.chatArrowIcon{
+    margin-left: 100%;
+    padding: 3%;
+    margin-top: -17%;
+    background: red;
+
+}
+.chatSenderName{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.chatNameMargin{
+    margin-right: auto;
+    margin-left: 19%;
+}
+
+.myChatTimeMargin{
+margin-right: 18px;
+}
+
+.message-body-margin{
+ margin-left: 50px;   
+}
+.chatFontSize{
+    font-size: 15px;
+    word-wrap: break-word;
+}
+.myChatTimeMarginActions{
+    position: relative;
+    left: -27%;
+}
+.privateText{
+    color: #EE8983;
+}
+.marginHostUserName{
+    margin-left: 38%;
+    margin-right: 77%;
+}
+
+.chatActionIcons{
+    position: relative;
+    right: 55%;
+    top: 8px;
+}
+.chatActionIconsParticipant{
+    margin-left: 65px;
+}
+.chatIcons{
+   margin-right: 10px;
+   font-size: 20px;
+}
+
+.select-message{
+    margin-top: -28px;
+    margin-right: 9px;   
+}
+.messages-list .messages-end {
+    float: right;
+    clear: both;
+}
+/* Add styles for the custom checkbox  for chat selection*/
+.custom-checkbox {
+    width: 17px; 
+    height: 17px; 
+    /* border-radius: 50%;  */
+    outline: none; 
+    border: 2px solid #000;
+    cursor: pointer;
+  }
+  
+  
+
+  .multiple-selection{
+    height:calc(100% - 150px) !important ;
+  }
+  .delete-modal{
+    margin-top:18%  !important;
+    max-width: 400px !important;
+
+  }
+/* Yoonus CSS end  */

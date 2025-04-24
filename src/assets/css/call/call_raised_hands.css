@@ -1,0 +1,9 @@
+.raised-hands-container {
+    padding: 10px;
+}
+.raised-hands-container .no-record {
+    font-size: 14px;
+}
+.hand-raised-toast {
+    align-items: flex-start !important;
+}

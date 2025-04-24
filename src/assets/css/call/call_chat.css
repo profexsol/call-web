@@ -1,0 +1,13 @@
+.chat-section .side-panel-body {
+    overflow: hidden;
+}
+.chat-section .messages-list {
+    height: calc(100% - 100px);
+}
+.new-message-toast {
+    align-items: flex-start !important;
+}
+.new-message-toast .icon {
+    position: relative;
+    top: 2px;
+}

@@ -1,0 +1,58 @@
+.add-time-container .modal-content {
+    display: block;
+}
+.add-time-container .popup-container {
+    width: 480px;
+}
+.add-time-container .add-time-select {
+    width: 100%;
+    padding: 0 7px !important;
+    height: 33px !important;
+    border: 1px solid #e1e1e1 !important;
+    border-radius: 5px;
+    font-size: 14px !important;
+    margin: 0 !important;
+}
+.add-time-container .add-time-select:focus {
+    outline: none;
+}
+.add-time-container .select-container {
+    display: inline-block !important;
+    width: 50%;
+    padding: 0 5px !important;
+}
+.select-container.hours-container {
+    padding-left: 0 !important;
+}
+.select-container.minutes-container {
+    padding-right: 0 !important;
+}
+.add-time-select::after, .add-time-select::before {
+    display: none;
+}
+#add-hours-select, #add-minutes-select {
+    height: 100%;
+    line-height: 31px;
+    padding: 0;
+}
+.add-time-container label {
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+.add-time-container button {
+    padding: 2px;
+    font-size: 14px;
+    color: white !important;
+}
+.add-time-container .error {
+    color: #c30808;
+    font-size: 13px;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+.add-time-container .success-btn {
+    width: 100% !important;
+}
+.add-time-container .options {
+    margin-top: 10px;
+}

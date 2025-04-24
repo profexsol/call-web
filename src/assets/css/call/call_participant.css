@@ -1,0 +1,84 @@
+.participant{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+.participant-image{
+    margin-bottom: 0px;
+    background-color: white;
+    padding: 11px 11px 10px 0px;
+    border-bottom: 1px solid #dddada;
+    border-top: 1px solid #dddada;
+}
+.participant .full-name {
+    text-transform: capitalize;
+    font-size: 13px;
+    color: #3B414E;
+}
+.participant .profile-picture{
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    margin-right: 10px;
+    object-fit: cover;
+}
+.participant .actions{
+    display: block !important;
+    height: auto !important;
+    padding: 0 !important;
+    text-align: right;
+}
+.participant .actions button{
+    font-size: 13px;
+}
+.participant .actions button:hover {
+    border: none;
+}
+.participant .actions .dropdown{
+    display: inline-block;
+}
+.participant .actions .dropdown-menu {
+    left: -10px !important;
+    box-shadow: 2px 1px 2px 0px rgb(228 228 228);
+}
+.participant .actions .dropdown-item {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+.participant .actions .dropdown-toggle{
+    padding-left: 15px;
+    padding-right: 0;
+    background: none;
+    color: #4E78B8;
+    font-size: 17px;
+    border: none;
+}
+.participant .actions .dropdown-toggle::after {
+    display: none;
+}
+.participant .actions .dropdown-toggle:focus{
+    box-shadow: none;
+}
+.participant .action  {
+    font-size: 20px;
+    color: #ADAEAF;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.participant .share-screen-action {
+    position: relative;
+    top: -2px;
+}
+.participant .action.on {
+    color: #31D27C;
+}
+.participant .left-side {
+    width: 50%;
+    float: left;
+}
+.participant .right-side{
+    width: 50%;
+    float: right;
+}

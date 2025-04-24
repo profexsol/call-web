@@ -1,0 +1,22 @@
+.load-testing {
+    width: 500px;
+    margin: 0 auto;
+}
+.load-testing .fas {
+    font-family: 'Font Awesome 5 Free' !important; 
+}
+.load-testing .error {
+    color: red;
+    margin-top: 3px;
+}
+.load-testing .form-group {
+    margin-bottom: 10px;
+}
+.load-testing input:focus {
+    border-color: #ced4da;
+    box-shadow: none;
+}
+.load-testing button:focus {
+    border-color: transparent;
+    box-shadow: none;
+}

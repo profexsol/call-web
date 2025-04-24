@@ -1,0 +1,154 @@
+:root {
+    --color-blue: #0057D3;
+    --color-background: lightgray;
+    --small: 14px;
+    --form-label: 15px;
+    --medium: 16px;
+    --large: 24px;
+    --light-blue: #93C0FF;
+    --white: #FFFFFF;
+	--block: #000000;
+	--red:   red;
+	--rightside: #E1F5FE;
+
+  }
+
+
+.add-to-call.modal{
+    z-index: 9999999;
+}
+.add-to-call .modal-dialog, .add-time-to-call .modal-dialog {
+    max-width: 500px;
+}
+.add-to-call .modal-content{
+    border: none;
+    box-shadow: 0px 0px 5px 0px #2d2d2d;
+    -webkit-box-shadow: 0px 0px 5px 0px #2d2d2d;
+}
+.add-to-call .tabs-container {
+    margin-bottom: 20px;
+}
+.add-to-call .single-tab {
+    background-color: white !important;
+    color: #49638c !important;
+    border-bottom: 1px solid;
+    border-color: #bbbbbb;
+    font-size: 15px;
+}
+.add-to-call .single-tab.Mui-selected {
+    border-color: #49638c !important;
+}
+.add-to-call .tab-indicator {
+    display: none;
+}
+.add-to-call .contacts-container {
+    max-height: 500px;
+    overflow: auto;
+}
+.add-to-call .contact {
+    display: flex;
+    align-items: center;
+    padding: 7px;
+    border: 1px solid #e5e5e5;
+    border-bottom: none;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.add-to-call .contact:last-child {
+    border-bottom: 1px solid #e5e5e5;
+}
+.add-to-call .contact .left-side {
+    font-size: 13px;
+}
+.add-to-call .contact img {
+    width: 45px;
+    border: 1px solid #eaeaea;
+    border-radius: 100px;
+    margin-right: 15px;
+}
+.add-to-call .contact .name-email {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: bold;
+}
+.add-to-call .contact .left-side .email {
+    font-size: 11px;
+    font-weight: normal;
+}
+.add-to-call .search-contacts, .add-to-call .search-by-email {
+    margin-bottom: 20px;
+}
+.add-to-call .search-contacts {
+    font-size: 14px;
+}
+.add-to-call .search-by-email {
+    display: flex;
+}
+.add-to-call .search-by-email input {
+    margin-right: 15px;
+    font-size: 14px;
+}
+.add-to-call .search-by-email button {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: black !important;
+}
+.add-to-call button .fa {
+    margin-left: 10px;
+}
+.add-to-call .contact p {
+    margin-bottom: 0;
+}
+.add-to-call .no-record {
+    font-size: 14px;
+}
+.add-to-call .to-be-added-container {
+    margin-bottom: 15px;
+}
+.add-to-call .to-be-added-user {
+    display: inline-block;
+    position: relative;
+    background: #ECF2F8;
+    color: black;
+    padding: 5px 10px;
+    font-size: 13px;
+    border-radius: 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.add-to-call .to-be-added-user .remove-btn {
+    position: absolute;
+    top: -6px;
+    right: -1px;
+    cursor: pointer;
+}
+.add-to-call .options {
+    margin-top: 30px;
+}
+.add-to-call .error {
+    color: red;
+    margin-top: -15px;
+    font-size: 12px;
+}
+.add-to-call .loaderr, .add-time-to-call .loaderr{
+    margin: 10px !important;
+    text-align: center;
+}
+.add-to-call .fa-spi, .add-time-to-call .fa-spi {
+    padding: 0 !important;
+    margin-left: 3px;
+    font-size: 14px;
+}
+.add-to-call .empty-data, .add-time-to-call .empty-data{
+    text-align: center;
+}
+
+.button-add{
+    border: none;
+    font-size: 16px;
+    height: 35px;
+    margin-top: 4px;
+    border-top-left-radius: 1px; 
+    border-bottom-left-radius: 1px;
+}

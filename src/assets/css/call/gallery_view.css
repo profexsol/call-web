@@ -1,0 +1,27 @@
+.gallery-view .streams-container {
+	width: 100%;
+	display: grid !important;
+	grid-template-columns: auto auto auto auto;
+	grid-template-rows: max-content;
+	grid-auto-rows: max-content;
+	grid-gap: 5px;
+	margin: 0;
+}
+.gallery-view .pagination-btn {
+	position: absolute;
+	top: 50%;
+    width: 35px;
+    height: 35px;
+    transform: translateY(-50%);
+	background: #161616;
+	z-index: 99999;
+	box-shadow: 0px 2px 5px 0px rgb(0 0 0 / 20%);
+    -webkit-box-shadow: 0px 2px 5px 0px rgb(0 0 0 / 20%);
+    -moz-box-shadow: 0px 2px 5px 0px rgb(0 0 0 / 20%);
+}
+.gallery-view .pagination-btn.next-btn {
+	right: 5px;
+}
+.gallery-view .pagination-btn.previous-btn {
+	left: 5px;
+}

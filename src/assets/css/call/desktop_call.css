@@ -1,0 +1,259 @@
+.desktop-call {
+    width: 100%;
+    height: 100%;
+}
+.desktop-call .title-bar{
+    width: 100%;
+    height: 30px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+}
+.desktop-call .title-bar .actions {
+    position: absolute;
+    right: 10px;
+    display: flex;
+}
+.desktop-call .title-bar .action {
+    width: 15px;
+    height: 15px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    border-radius: 70px;
+    color: white;
+    margin-left: 10px;
+    cursor: pointer
+}
+.desktop-call .title-bar .action.close {
+    background: red;
+    opacity: 1;
+}
+.desktop-call .title-bar .action.minimize {
+    background: #5e5e69;
+}
+.desktop-call .title-bar .action.minimize:before {
+    position: relative;
+    top: -3px
+}
+.desktop-call .call-container {
+    height: calc(100vh - 30px);
+}
+.desktop-call .call-header .go-back-btn {
+    display: none;
+}
+.desktop-call .toolbar {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    padding-left: 10px;
+    background: black;
+    color: white;
+}
+.desktop-call .toolbar .control {
+    margin-right: 10px;
+    cursor: pointer;
+}
+.desktop-call .sharing-screen-parent {
+    display: none;
+}
+.call-shared-screen-layout .call-handler {
+    background: none !important;
+}
+.desktop-call-actions {
+    width: 100%;
+    height: 100%;
+}
+.shared-screen-layout .desktop-call-actions.minimized .footer_btns {
+    visibility: hidden;
+    opacity: 0;
+    transition: linear;
+}
+.desktop-call-actions.minimized.not-dragged .sharing-screen-parent {
+    top: -66px;
+}
+.call-container:not(.shared-screen-layout) .desktop-call-actions {
+    transform: none !important;
+}
+.desktop-call .speaking-container {
+    display: none;
+    padding: 10px;
+    font-size: 13px;
+}
+.desktop-call.minimized-view .speaking-container {
+    display: block;
+}
+.desktop-call.minimized-view .desktop-videos-area {
+    height: 70px !important;
+    color: white;
+}
+.desktop-call.minimized-view .video-manager{
+    display: none;
+}
+.desktop-call.minimized-view .control.minimized {
+    color: #e26548;
+}
+.desktop-call.speaker-view .control.speaker {
+    color: #e26548;
+}
+.desktop-call.gallery-view .control.gallery {
+    color: #e26548;
+}
+.desktop-call.speaker-view .speaker-stream {
+    padding: 0 !important;
+    height: 100%;
+}
+.desktop-call.speaker-view .other-streams {
+    display: none;
+}
+.desktop-call .desktop-videos-area {
+    width: 100%;
+    height: 100%;
+    background: #2b2c30;
+}
+.shared-screen-layout .call-body {
+    height: 100%;
+    padding: 0;
+}
+.shared-screen-layout.desktop-call {
+    width: 0;
+    height: 0;
+}
+.shared-screen-layout.desktop-call .title-bar {
+    display: none;
+}
+.shared-screen-layout.desktop-call .desktop-videos-area {
+    width: 300px;
+    height: 300px;
+    position: fixed;
+    top: 1px;
+    right: 3px;
+}
+.shared-screen-layout.countdown-visible .desktop-videos-area {
+    top: 45px;
+}
+.main-layout .desktop-videos-area {
+    transform: none !important;
+}
+.shared-screen-layout .call-footer {
+    display: block !important;
+}
+.shared-screen-layout .desktop-call-actions {
+    width: 700px;
+    height: 100px;
+    position: fixed;
+    top: 1px;
+    left: calc(50% - 350px);
+    transform: translateX(-50%);
+}
+.shared-screen-layout .call-container {
+    width: 100%;
+    height: 100% !important;
+    background: none !important;
+}
+.shared-screen-layout .desktop-videos-area {
+    border-radius: 10px;
+}
+.shared-screen-layout .desktop-videos-area .toolbar {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.shared-screen-layout .footer_btns {
+    height: 70px !important;
+    position: relative;
+    background: #2b2c30;
+    border-radius: 10px;
+    padding: 10px;
+    transform: none !important;
+}
+.shared-screen-layout.countdown-visible .call-time-master {
+    width: 300px;
+    position: fixed;
+    top: 1px;
+    right: 3px;
+    left: auto;
+}
+.shared-screen-layout .footer_btns, 
+.shared-screen-layout .desktop-videos-area,
+.shared-screen-layout .side-panel {
+    box-shadow: 0px 2px 5px 0px rgb(0 0 0 / 40%);
+    -webkit-box-shadow: 0px 2px 5px 0px rgb(0 0 0 / 40%);
+    -moz-box-shadow: 0px 2px 5px 0px rgb(0 0 0 / 40%);
+}
+.shared-screen-layout .desktop-videos-area .speaker-view {
+    height: calc(100% - 30px) !important;
+}
+.shared-screen-layout .video-manager {
+    padding: 15px;
+}
+.shared-screen-layout .user-stream-item {
+    box-shadow: 0px 2px 5px 0px rgb(0 0 0 / 10%);
+    -webkit-box-shadow: 0px 2px 5px 0px rgb(0 0 0 / 10%);
+    -moz-box-shadow: 0px 2px 5px 0px rgb(0 0 0 / 10%);
+}
+.shared-screen-layout .side-panel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: calc(100% - 150px);
+}
+.shared-screen-layout .desktop-call-actions .dropup .dropdown-menu {
+    top: 56px !important;
+    bottom: initial !important;
+    right: 0px !important;
+}
+.desktop-call-actions.minimized .leave-call-dropdown .dropdown-menu {
+    top: 0 !important;
+}
+.shared-screen-layout .desktop-call-actions .tooltip {
+    bottom: -35px !important
+}
+.shared-screen-layout .desktop-call-actions .tooltip::after {
+    display: none;
+}
+.shared-screen-layout .sharing-screen-parent {
+    display: block !important;
+    position: relative;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer;
+}
+.shared-screen-layout .sharing-screen, .shared-screen-layout .stop-share-screen {
+    padding: 5px 10px;
+    border-radius: 10px;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}
+.shared-screen-layout .sharing-screen {
+    background: #EDAB30;
+    margin-right:4px;
+}
+.shared-screen-layout .stop-share-screen {
+    background: red;
+}
+.shared-screen-layout .gallery-view .user-stream-item {
+    height: 115px !important;
+}
+.shared-screen-layout .google-ad-container {
+    display: none;
+}
+.shared-screen-layout .reactions-list {
+    top: 130px;
+    bottom: auto;
+}
+.handling-call #root {
+    width: 100%;
+    height: 100vh;
+}
+html, body {
+    background-color: transparent !important;
+}

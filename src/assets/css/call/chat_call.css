@@ -1,0 +1,6 @@
+.chat-call .participants-container .hosts-section {
+    display: none;
+}
+.chat-call .add-message .options {
+    visibility: hidden !important;
+}

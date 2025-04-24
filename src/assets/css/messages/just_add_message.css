@@ -1,0 +1,7 @@
+.just-add-message.add-message{
+    height: 60px;
+}
+.just-add-message #input-field {
+    width: calc(100% - 50px) !important;
+    height: 100%;
+}
