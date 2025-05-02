@@ -14,9 +14,7 @@ class WnCall extends React.Component {
 
     constructor(props) {
         super(props);
-        
-        this.chat_id = props.chat_id;
-        this.chat = {};
+
         this.is_video = false;
         this.is_incoming = false;
         this.current_user = props.current_user;
@@ -67,12 +65,12 @@ class WnCall extends React.Component {
 
     attachBusListeners() {
         bus.on('ms_socket__connected', (socket) => {
-            console.log('WnCall ms_socket__connected', this.wait_call_id);
+            console.log('WnCall ms_socket__connected', this.wait_call);
             this.rtc_helpers.socket = socket;
 
             this.attachSocketListeners(socket);
 
-            if(this.wait_call_id) {
+            if(this.wait_call) {
                 this.prepareJoinCall();
             }
         });
@@ -101,7 +99,7 @@ class WnCall extends React.Component {
         socket.on('call:rejected', (data) => {
             console.log('call:rejected', data);
 
-            if(this.call_id != data.call_id) return;
+            if(this.call.id != data.call_id) return;
 
             this.leaveCall();
             this.setState({ call_status: 'no_answer', show_closing_screen: true });
@@ -110,13 +108,13 @@ class WnCall extends React.Component {
         socket.on('call:ringing', (data) => {
             console.log('call:ringing', data);
 
-            if(this.call_id != data.call_id) return;
+            if(this.call.id != data.call_id) return;
 
             this.setState({ call_status: 'ringing' });
         });
 
         socket.on('call:new', (data) => {
-            this.chat = { call_image: data.user.profile_image, call_name: data.user.name };
+            this.call = data;
             this.setState({ incoming_call: data });
             $('.incoming-call-modal').modal('show');
 
@@ -124,24 +122,22 @@ class WnCall extends React.Component {
                 event: 'call:ringing',
                 return_response: true,
                 data: {
-                    call_id: data.call_id,
-                    target_user_id: data.user.id,
+                    call_id: this.call.id,
+                    app_data: { group_id: this.call.app_data.group_id, target_user_id: this.call.app_data.target_user_id }
                 }
             });
         });
     }
 
     async prepareJoinCall(params = {}) {
-        var { chat_id, chat, current_user, target_user_id, redial } = params;
+        var { call, current_user, redial } = params;
 
-        if(chat_id && current_user) {
-            this.chat_id = chat_id;
-            this.chat = chat || {};
+        if(call && current_user) {
+            this.call = call;
             this.current_user = current_user;
-            this.target_user_id = target_user_id;
         }
 
-        console.log('prepareJoinCall', this.chat_id, this.context.ms_socket, this.context.ms_socket && this.context.ms_socket.id, this.context.ms_socket && this.context.ms_socket.connected);
+        console.log('prepareJoinCall', call, this.context.ms_socket && this.context.ms_socket.id);
 
         var has_video = common.getUrlParameter('hasVideo');
         if(has_video === "true" || has_video === true) {
@@ -149,12 +145,12 @@ class WnCall extends React.Component {
         }
 
         if(!this.context.ms_socket || !this.context.ms_socket.id) {
-            this.wait_call_id = this.chat_id;
+            this.wait_call = this.call;
 
             return;
         }
 
-        this.wait_call_id = false;
+        this.wait_call = false;
         window.incoming_call = false;
 
         clearTimeout(this.timeout_id);
@@ -166,16 +162,14 @@ class WnCall extends React.Component {
             enable_join_options: false
         };
 
-        var call = { chatId: this.chat_id };
         var is_calling = false;
 
         if(!this.state.incoming_call) {
             is_calling = true;
         
         } else {
-            call.id = this.state.incoming_call.call_id;
-            call.chat_id = this.state.incoming_call.call_id;
-            call.room_id = this.state.incoming_call.call_id;
+            this.call.id = this.state.incoming_call.id;
+            this.call.room_id = this.state.incoming_call.id;
 
             if(redial) {
                 is_calling = true;
@@ -187,18 +181,13 @@ class WnCall extends React.Component {
                 event: 'call:new',
                 return_response: true,
                 data: {
-                    chat_id: this.chat_id,
-                    target_user_id: target_user_id,
-                    user: this.current_user,
+                    app_data: { group_id: this.call.group_id, target_user_id: this.call.target_user_id },
                     has_video: this.is_video
                 }
             });
-
-            this.call_id = call_id;
             
-            call.id = call_id;
-            call.chat_id = this.chat_id;
-            call.room_id = call_id;
+            this.call.id = call_id;
+            this.call.room_id = call_id;
             
             this.setState({ call_status: 'calling', show_closing_screen: false });
 
@@ -210,7 +199,7 @@ class WnCall extends React.Component {
         }
 
         this.setState({
-            call: call,
+            call: this.call,
             call_options: call_options,
             host_ids: []
           
@@ -287,9 +276,7 @@ class WnCall extends React.Component {
         this.rtc_helpers.socketEmit({
             event: 'call:accepted',
             data: {
-                call_id: this.state.incoming_call.call_id,
-                chat_id: this.state.incoming_call.chat_id,
-                target_user_id: this.state.incoming_call.user.id
+                call_id: this.call.id
             }
         });
 
@@ -300,9 +287,7 @@ class WnCall extends React.Component {
         this.rtc_helpers.socketEmit({
             event: 'call:rejected',
             data: {
-                call_id: this.state.incoming_call.call_id,
-                chat_id: this.state.incoming_call.chat_id,
-                target_user_id: this.state.incoming_call.user.id
+                call_id: this.call.id
             }
         });
     }
@@ -330,20 +315,20 @@ class WnCall extends React.Component {
                     
                     <div className="precall-screen">
                         
-                        { this.chat.call_image &&
+                        { this.call.image &&
 
-                            <img src={ this.chat.call_image } />
+                            <img src={ this.call.image } />
                         }
 
-                        { this.chat.call_images &&
+                        { this.call.images &&
 
                             <div class='images'>
-                                <img src={ this.chat.call_images[0] } />
-                                <img src={ this.chat.call_images[1] } />
+                                <img src={ this.call.images[0] } />
+                                <img src={ this.call.images[1] } />
                             </div>
                         }
                         
-                        <span className="name">{ this.chat.call_name }</span>
+                        <span className="name">{ this.call.name }</span>
 
                         {
                             (this.state.call_status == 'calling' || this.state.call_status == 'ringing') &&
@@ -401,11 +386,11 @@ class WnCall extends React.Component {
                         { this.state.incoming_call &&
                         
                             <div className="top-part text-center">
-                                <img src={ this.state.incoming_call.user.profile_image } width="150" height="150" />
+                                <img src={ this.state.incoming_call.image } width="150" height="150" />
 
                                 <div className="right-side">
                                     <p className="name">{ this.state.incoming_call.user.name }</p>
-                                    <p>is inviting you to a private meeting</p>
+                                    <p>is inviting you to { this.state.incoming_call.name } ({ this.state.incoming_call.type }) call</p>
                                 </div>
                             </div>
                         }

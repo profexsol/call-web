@@ -97,6 +97,7 @@ class VideoManager extends React.Component {
             }
 
         } else {
+            this.addToUserStreams({ user_id });
             this.mayBeGetUserStream({ user_id, get_fresh: true });
         }
     }
