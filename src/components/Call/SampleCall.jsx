@@ -9,7 +9,7 @@ import { AppContext } from "../Contexts";
 import RtcHelpers from "../../assets/webrtc-client/src/rtc_helpers";
 import "../../assets/css/call/wn_call.css";
 
-class WnCall extends React.Component {
+class SampleCall extends React.Component {
     static contextType = AppContext;
 
     constructor(props) {
@@ -407,4 +407,4 @@ class WnCall extends React.Component {
     }
 }
 
-export default withTranslation()(WnCall);
+export default withTranslation()(SampleCall);
