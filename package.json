@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "vite",
+    "start": "vite --config apps/shakir-singsava/vite.config.js",
     "build": "vite build"
   },
   "keywords": [],
