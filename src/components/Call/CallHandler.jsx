@@ -101,7 +101,7 @@ const CallHandler = forwardRef((props, ref) => {
   const onCallLeft = (params) => {
     const { user_id, user_status, user_action, breakout_room, soft_leave } = params;
 
-    if(user_id != common.getCurrentUser().id) return;
+    if(user_id != props.current_user.id) return;
     if(!handlingCallRef.current) return;
 
     setBreakoutRoom(breakout_room);

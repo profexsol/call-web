@@ -26,6 +26,7 @@ export default class CallLibrary extends React.Component {
             room_id: this.props.call.room_id,
             title: this.props.call.title,
             app_data: this.props.call.app_data,
+            external_id: this.props.call.external_id,
             send_invitations: this.props.call_options.ring_on_start
         }
 	}

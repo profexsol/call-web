@@ -101,7 +101,8 @@ class SampleCall extends React.Component {
 
             if(this.call.id != data.call_id) return;
 
-            this.leaveCall();
+            // this.leaveCall();
+            this.dial_tone_ref.current.pause();
             this.setState({ call_status: 'no_answer', show_closing_screen: true });
         });
 
@@ -115,7 +116,7 @@ class SampleCall extends React.Component {
 
         socket.on('call:new', (data) => {
             this.call = data;
-            this.setState({ incoming_call: data });
+            this.setState({ is_incoming: true });
             $('.incoming-call-modal').modal('show');
 
             this.rtc_helpers.socketEmit({
@@ -129,10 +130,9 @@ class SampleCall extends React.Component {
     }
 
     async prepareJoinCall(params = {}) {
-        var { call, is_incoming, redial } = params;
+        var { call, is_calling, redial } = params;
 
         this.call = call;
-        this.setState({ is_incoming });
 
         console.log('prepareJoinCall', call, this.context.ms_socket && this.context.ms_socket.id);
 
@@ -159,19 +159,6 @@ class SampleCall extends React.Component {
             enable_join_options: false
         };
 
-        var is_calling = false;
-
-        if(!is_incoming) {
-            is_calling = true;
-        
-        } else {
-            this.call.room_id = this.call.id;
-
-            if(redial) {
-                is_calling = true;
-            }
-        }
-
         if(is_calling) {
             var { call_id } = await this.rtc_helpers.socketEmit({
                 event: 'call:new',
@@ -180,7 +167,8 @@ class SampleCall extends React.Component {
                     name: call.name,
                     type: call.type,
                     image: call.image,
-                    users: call.users
+                    users: call.users,
+                    external_id: call.external_id
                 }
             });
             
@@ -194,6 +182,9 @@ class SampleCall extends React.Component {
                 this.leaveCall();
             
             }, 30000);
+        
+        } else {
+            this.call.room_id = this.call.id;
         }
 
         this.setState({
@@ -209,6 +200,8 @@ class SampleCall extends React.Component {
     onCallLeft({ soft_leave, user_id }) {
         if (soft_leave) return;
         if(!user_id) return;
+
+        console.log('onCallLeft', user_id, this.current_user.id);
 
         if(user_id == this.current_user.id) {
             this.notifyReject();
@@ -269,7 +262,7 @@ class SampleCall extends React.Component {
         this.dial_tone_ref.current.pause();
         this.setState({ call_status: 'connected' });
 
-        this.prepareJoinCall({ call: this.state.incoming_call, is_incoming: true });
+        this.prepareJoinCall({ call: this.call, is_incoming: true });
 
         this.rtc_helpers.socketEmit({
             event: 'call:accepted',
@@ -366,7 +359,7 @@ class SampleCall extends React.Component {
                     </div>
                 }
 
-                <audio src='/ringtone/dial_tone.mp3' ref={this.dial_tone_ref} class='d-none' loop />
+                <audio src='/audios/dial_tone.mp3' ref={this.dial_tone_ref} class='d-none' loop />
                 </>
             </div>
             
@@ -384,11 +377,11 @@ class SampleCall extends React.Component {
                         { this.state.is_incoming &&
                         
                             <div className="top-part text-center">
-                                <img src={ this.state.call.image } width="150" height="150" />
+                                <img src={ this.call.image } width="150" height="150" />
 
                                 <div className="right-side">
-                                    <p className="name">{ this.state.call.user.name }</p>
-                                    <p>is inviting you to { this.state.call.name } ({ this.state.call.type }) call</p>
+                                    <p className="name">{ this.call.user.name }</p>
+                                    <p>is inviting you to { this.call.name } ({ this.call.type }) call</p>
                                 </div>
                             </div>
                         }

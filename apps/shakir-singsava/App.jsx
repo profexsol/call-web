@@ -17,7 +17,7 @@ var user_image = query_params.get('user_image');
 
 var current_user = {
     id: user_id,
-    name: user_image,
+    name: user_name,
     image: user_image
 }
 
@@ -40,11 +40,11 @@ const App = (props) => {
         setMsSocket(ms_socket);
 
         window.joinCall = ({ call }) => {
-            window.prepareJoinCall({ call, current_user });
+            window.prepareJoinCall({ call });
         }
 
-        window.makeCall = ({ incoming_call }) => {
-            window.prepareJoinCall({ incoming_call, current_user });
+        window.makeCall = ({ call }) => {
+            window.prepareJoinCall({ call: call, is_calling: true });
         }
     }, []);
 

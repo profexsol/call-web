@@ -68,3 +68,6 @@
     position: relative;
     left: -20px;
 }
+.incoming-call-modal {
+    z-index: 99999999;
+}

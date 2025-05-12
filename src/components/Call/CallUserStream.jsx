@@ -314,7 +314,7 @@ class CallUserStream extends React.Component {
           <div class="overlay">
             <div class="overlay-item">
               {(!this.state.is_video_on || !this.state.is_stream_playing) &&
-                <img class="video-off profile-picture" src={this.state.user.profile_picture_url} />
+                <img class="video-off profile-picture" src={this.state.user.image} />
               }
 
               {this.state.is_applying_effects &&

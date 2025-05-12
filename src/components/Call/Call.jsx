@@ -54,9 +54,7 @@ export default class Call extends React.Component {
     this.current_user = this.props.current_user;
 
     this.call = this.props.call;
-    this.call_library = null;
-    this.current_user.name = this.current_user.firstname + ' ' + this.current_user.lastname;
-    this.current_user.profile_picture_url = this.current_user.profile_image;
+    this.call_library = null;;
     this.user_status = "";
 
     this.call.cache_data_key = this.call.room_id + "_cache_data";
